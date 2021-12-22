@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" difert integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>SCHOOL_APP:)</title>
+</head>
+<body>
+    <main id="">
+        <div class="container" id="div-container">      
+            <div class="row mx-0">
+                <div class="col-sm-12 col-md-6 mt-5">
+                    <h4>Nouvel-le Apprenant</h4>
+                    <form action="" id="form-apprenant">
+                        <div class="mb-3">
+                            <label for="nom" class="form-label">Nom</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="nom" placeholder="nom">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nom" class="form-label">Preom</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="prenom" placeholder="prenom">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nom" class="form-label">Niveau</label><span class="text-danger">*</span>
+                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="niveau">
+                                <option value="Debutant">Debutant</option>
+                                <option value="Intermediaire">Intermediaire</option>
+                                <option value="junior">Junior</option>
+                            </select>
+                        </div>
+                        <div class="mb-1">
+                            <label for="exampleFormControlTextarea1" class="form-label">Biographie</label><span class="text-danger">*</span>
+                            <textarea class="form-control" id="biographie" rows="3"></textarea>
+                            <p class="text-end my-2 me-3"><span>0</span>/130</p>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button type="submit" class="btn btn-success" id="btn-ajouter">AJOUTER</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-12 col-md-6">
+
+                </div>
+            </div>
+         </div>
+    </main>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
