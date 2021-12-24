@@ -1,4 +1,9 @@
-const formApprenant=document.querySelector("#form-apprenant");
+import {AjoutApprenant } from './creerCarte.js'
+
+AjoutApprenant()
+
+
+/*const formApprenant=document.querySelector("#form-apprenant");
 const nom=document.querySelector("#nom")
 const prenom=document.querySelector("#prenom")
 const biographie=document.querySelector("#biographie")
@@ -169,6 +174,17 @@ function creerUNeCarte(apprenant,apprenants){
     const carteSupprimer=document.getElementById(idDivSupp)
 
 
+    
+    func_btnModifier(btnModifier,idModifier)
+
+    //suppresion de la carte apprenant de la liste
+    func_btnSupprimer(btnSupprimer,idSpprimer,carteSupprimer)
+    
+}
+
+
+function func_btnModifier(btnModifier,idModifier)
+{
     btnModifier.addEventListener("click",(event)=>{
         event.preventDefault()
         //alert("bonjour")
@@ -188,9 +204,9 @@ function creerUNeCarte(apprenant,apprenants){
             
         })
     })
+}
 
-
-    //suppresion de la carte apprenant de la liste
+function func_btnSupprimer(btnSupprimer,idSpprimer,carteSupprimer){
     btnSupprimer.addEventListener("click",(event)=>{
         event.preventDefault()
         apprenants.forEach(apprenant=>{
@@ -214,8 +230,7 @@ function creerUNeCarte(apprenant,apprenants){
         
     })
 }
-
-
+*/
 window.addEventListener("DOMContentLoaded", (event) => {
     apprenants.forEach(apprenant => {
         creerUNeCarte(apprenant)
