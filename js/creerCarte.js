@@ -184,14 +184,14 @@ export function AjoutApprenant(){
             }
             else if(btnAjouter.value=="Ajouter")
             {
-                app={
+                const app={
                     id:Date.now(),
                     nom:nom.value,
                     prenom:prenom.value,
-                    profile:"profile",
+                   // profile:"profile",
                     biographie:biographie.value,
                     niveau:niveau.value
-                },
+                }
                 apprenants.push(app),
                 divTableauApprenant.innerHTML="",
                 apprenants.forEach(apprenant=>{
@@ -203,12 +203,12 @@ export function AjoutApprenant(){
                 //e.target.submit()
                 
             }else{
-                alert("modifer")
+                
                 apprenants.forEach(apprenant=>{
                     if(apprenant.id==sessionStorage.getItem("apprenantAMod"))
                     {
                         alert("bonjour")
-                        app={
+                        const app={
                             id:sessionStorage.getItem("apprenantAMod"),
                             nom:nom.value,
                             prenom:prenom.value,
@@ -216,18 +216,22 @@ export function AjoutApprenant(){
                             biographie:biographie.value,
                             niveau:niveau.value
                         }
+                        alert("button kaba")
                         const index=apprenants.indexOf(apprenant)
-                        apprenants.splice(index,1,app)
-                        btnAjouter.value="Ajouter"
-                        btnAjouter.textContent="Ajouter"
+                        apprenants.splice(index,1,app)  
+                        alert(btnAjouter.value)
                         divTableauApprenant.innerHTML=""
                         viderInputs()
+                        btnAjouter.value="Ajouter"
+                        btnAjouter.innerText="Ajouter"
                         apprenants.forEach(apprenant=>{
                             creerUNeCarte(apprenant,apprenants)
                         })
+
                     }
                 })
+              
             }
-    
     })
+
 }

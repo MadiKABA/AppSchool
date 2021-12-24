@@ -1,6 +1,8 @@
 import {AjoutApprenant } from './creerCarte.js'
+import {func_sauvegarde } from './scriptSupabase.js'
 
 AjoutApprenant()
+func_sauvegarde()
 
 
 /*const formApprenant=document.querySelector("#form-apprenant");
@@ -231,7 +233,7 @@ function func_btnSupprimer(btnSupprimer,idSpprimer,carteSupprimer){
     })
 }
 */
-window.addEventListener("DOMContentLoaded", (event) => {
+/*window.addEventListener("DOMContentLoaded", (event) => {
     apprenants.forEach(apprenant => {
         creerUNeCarte(apprenant)
         
@@ -239,4 +241,4 @@ window.addEventListener("DOMContentLoaded", (event) => {
    
 })
 
-//console.log(apprenants)
+//console.log(apprenants)*/
