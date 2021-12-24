@@ -57,9 +57,24 @@ formApprenant.addEventListener("submit", (e)=>{
         }else{
             alert("modifer")
             apprenants.forEach(apprenant=>{
-                if(apprenant.id==5)
+                if(apprenant.id==sessionStorage.getItem("apprenantAMod"))
                 {
-
+                    alert("bonjour")
+                    app={
+                        id:sessionStorage.getItem("apprenantAMod"),
+                        nom:nom.value,
+                        prenom:prenom.value,
+                        profile:"profile",
+                        biographie:biographie.value,
+                        niveau:niveau.value
+                    }
+                    const index=apprenants.indexOf(apprenant)
+                    apprenants.splice(index,1,app)
+                    divTableauApprenant.innerHTML=""
+                    viderInputs()
+                    apprenants.forEach(apprenant=>{
+                        creerUNeCarte(apprenant,apprenants)
+                    })
                 }
             })
         }
@@ -168,7 +183,7 @@ function creerUNeCarte(apprenant,apprenants){
                 btnAjouter.value="Modifier"
                 btnAjouter.textContent="Modifier"
                 console.log(btnAjouter)
-                localStorage.setItem("apprenantAMod")
+                sessionStorage.setItem("apprenantAMod",idModifier)
             }
             
         })
