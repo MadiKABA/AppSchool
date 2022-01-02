@@ -96,6 +96,6 @@ export function supprimer_apprenat(id) {
     },
     body: null
   })
-  window.location.href = "https://madikaba.github.io/appSchool/"
+  window.location.href = "https://madikaba.github.io/appSchool/index.html"
 
 }
