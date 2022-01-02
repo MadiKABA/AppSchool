@@ -17,7 +17,7 @@ const maquetter=document.querySelector("#maquetter")
 const basededonnees=document.querySelector("#basededonnees")
 const interfacedynamique=document.querySelector("#interfacedynamique")
 const devbackend=document.querySelector("#devbackend")
-const divContainerAdd=document.querySelector("#div-container")
+export const divContainerAdd=document.querySelector("#div-container")
 
 const modal_detailsApprenant=document.querySelector("#modal_detailsApprenant")
 

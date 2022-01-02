@@ -27,14 +27,15 @@ export function func_sauvegarde() {
       headers: {
         apikey: API_KEY,
         "Content-Type": "application/json",
-        //Prefer: "return=representation"
+        Prefer: "return=representation"
       },
       body: JSON.stringify(apprenant)
     })
-    alert("bien sauvegarder")
+   // alert("bien sauvegarder")
+  
   })
   //alert("bien sauvegarder")
-  window.location.href = "../index.html"
+  //
 
 
 
@@ -95,6 +96,6 @@ export function supprimer_apprenat(id) {
     },
     body: null
   })
-  window.location.href = "../index.html"
+  window.location.href = "../#"
 
 }
