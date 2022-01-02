@@ -19,12 +19,14 @@ let pourcentageBackend=document.querySelector("#pourcentageBackend")
 
 
 export function func_sauvegarde(){
-  alert("bien sauvegarder")
+  //alert("bien sauvegarder")
     sauvegarder.addEventListener("click",(event)=>{
       event.preventDefault()
       //alert("bien sauvegarder")
       alert(apprenants)
+      console.log(apprenants)
         apprenants.forEach(apprenant=>{
+          alert("bien sauvegarder")
             fetch(API_URL,{
               method:"POST",
               headers:{
@@ -53,7 +55,7 @@ export function  func_load_listeApprenants()
     })
       .then((response) => response.json())
       .then((apprenant) => {
-        apprenant.forEach((app) => creerUNeCarte(app,"d-block",list_apprenant));
+        apprenant.forEach((app) => creerUNeCarte(app,"col-md-4","d-none","d-block",list_apprenant));
       });
    
 }
@@ -69,11 +71,9 @@ export function show_detail(id)
       .then((apprenant) => {
         //modalDetail(apprenant)
         modalDetail(apprenant[0])
-        console.log(apprenant)
-        console.log(apprenant[0].nom)
       });
 
-      alert("show")
+      //alert("show")
 }
 
 
@@ -81,11 +81,30 @@ export function show_detail(id)
 function modalDetail(apprenant)
 {
   nom_prenom.textContent=apprenant.nom+" "+apprenant.prenom
-  niveaudetail.textContent+=apprenant.niveau
+  niveaudetail.textContent=apprenant.niveau
   bio.textContent=apprenant.biographie
   pourcentageMaquetter.style.width=`${apprenant.maquetter}%`
   pourcentageinterfaceStatic.style.width=`${apprenant.interfacedynamique}%`
   pourcentageBaseD.style.width=`${apprenant.basedonnee}%`
   pourcentageBackend.style.width=`${apprenant.devbackend}%`
+
+  pourcentageMaquetter.textContent=`${apprenant.maquetter}%`
+  pourcentageinterfaceStatic.textContent=`${apprenant.interfacedynamique}%`
+  pourcentageBaseD.textContent=`${apprenant.basedonnee}%`
+  pourcentageBackend.textContent=`${apprenant.devbackend}%`
 }
 
+
+export function supprimer_apprenat(id)
+{
+
+  fetch(`${API_URL}?id=eq.${id}`,{
+    method:"DELETE",
+    headers:{
+      apiKey:API_KEY
+    },
+    body:null
+  })
+  window.location.href="../index.html"
+   
+}

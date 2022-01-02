@@ -17,125 +17,130 @@
 
 <body>
     <main id="">
-        <div class="container">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                data-bs-target="#modal_detailsApprenant">
-                Launch static backdrop modal
-            </button>
+        <section id="section_details">
+            <div class="container">
+                <div class="modal fade" id="modal_detailsApprenant" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
 
-            <!-- Modal -->
-            <div class="modal fade" id="modal_detailsApprenant" data-bs-backdrop="static" data-bs-keyboard="false"
-                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <div class="modal-header">
-                            <h6>Nom Prenom</h6>
-                            <h5 id="nom_prenom"></h5>
-                        </div>
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
 
-                        <div class="modal-body">
-                            <p id="niveaudetail">Niveau: </p>
-                            <h6>Biographie</h6>
-                            <p id="bio"></p>
-                            Maquetter une application
-                            <div class="progress mb-3">
-                                <div id="pourcentageMaquetter" class="progress-bar progress-bar-striped bg-success"
-                                    role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="modal-body">
+                                Non&Prenom: <h5 class="text-center" id="nom_prenom"> </h5>
+                                Niveau: <p id="niveaudetail"> </p>
+                                <h6>Biographie</h6>
+                                <p class="text-break" id="bio"></p>
+                                <h6>Mes Competences</h6>
+                                Maquetter une application
+                                <div class="progress mb-3">
+                                    <div id="pourcentageMaquetter" class="progress-bar progress-bar-striped bg-success"
+                                        role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%
+                                    </div>
+                                </div>
+                                Creer une interface dynamique
+                                <div class="progress mb-3">
+                                    <div id="pourcentageinterfaceStatic"
+                                        class="progress-bar progress-bar-striped bg-info" role="progressbar"
+                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                Creer une base donnee
+                                <div class="progress mb-3">
+                                    <div id="pourcentageBaseD" class="progress-bar progress-bar-striped bg-warning"
+                                        role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                Développer la partie back-end
+                                <div class="progress mb-3">
+                                    <div id="pourcentageBackend" class="progress-bar progress-bar-striped bg-danger"
+                                        role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
                             </div>
-                            Creer une interface dynamique
-                            <div class="progress mb-3">
-                                <div id="pourcentageinterfaceStatic" class="progress-bar progress-bar-striped bg-info"
-                                    role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            Creer une base donnee
-                            <div class="progress mb-3">
-                                <div id="pourcentageBaseD" class="progress-bar progress-bar-striped bg-warning"
-                                    role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            Développer la partie back-end
-                            <div class="progress mb-3">
-                                <div id="pourcentageBackend" class="progress-bar progress-bar-striped bg-danger"
-                                    role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
 
-                        <div class="modal-footer">
-                            <i class="bi bi-pen btn text-warning" id=""></i>
-                            <i class="bi bi-trash btn text-danger"></i>
+                            <div class="modal-footer">
+                                <i class="bi bi-pen btn text-warning" id="btn_modifierApp"></i>
+                                <i class="bi bi-trash btn text-danger" id="btn_spprimer"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-        </div>
-        <div class="container-fluid " id="div-container">
-            <div class="row mx-0 d-none" id="div_form_ajout">
-                <div class="col-sm-12 col-md-9 mt-5">
+
+        <div class="container-fluid d-none" id="div-container">
+            <div class="row mx-0 " id="div_form_ajout">
+                <div class="col-sm-12 col-md-8 mt-5">
                     <h4>Nouvel-le Apprenant</h4>
                     <form action="" id="form-apprenant">
+
                         <div class="row mx-0">
-                            <div class="col-md-5">
-                                <div class="mb-3">
-                                    <label for="nom" class="form-label">Nom</label><span class="text-danger">*</span>
-                                    <input type="text" class="form-control" id="nom" placeholder="nom">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nom" class="form-label">Preom</label><span class="text-danger">*</span>
-                                    <input type="text" class="form-control" id="prenom" placeholder="prenom">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nom" class="form-label">Niveau</label><span class="text-danger">*</span>
-                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example"
-                                        id="niveau">
-                                        <option value="debutant">Debutant</option>
-                                        <option value="intermediaire">Intermediaire</option>
-                                        <option value="junior">Junior</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="formFileSm" class="form-label">Photo de profile</label>
-                                    <input class="form-control form-control-sm" id="imgprofil" type="file"
-                                        accept=".jpg, .jpeg, .png .svg">
-                                </div>
-                                <img src="" class="d-none" id="profile" alt="">
-                                <div class="mb-1">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Biographie</label><span
-                                        class="text-danger">*</span>
-                                    <textarea class="form-control" id="biographie" rows="3"></textarea>
-                                    <p class="text-end my-2 me-3" id="paragraphe-limite-texte">
-                                        contenu saisi: <span id="span-nombre-caracteres">0</span>/130
-                                    </p>
-                                    <p id="testResntant"></p>
-                                </div>
+                            <div class="col-sm-12 col-md-6 mb-3">
+                                <label for="nom" class="form-label">Nom</label><span class="text-danger">*</span>
+                                <input type="text" class="form-control" id="nom" placeholder="nom">
                             </div>
-                            <div class="col-md-4">
-                                <h3>Les competences</h3>
-                                <div class="mb-3">
-                                    <label for="nom" class="form-label">Maquetter une application</label><span
-                                        class="text-danger">*</span>
-                                    <input type="number" class="form-control" id="maquetter" placeholder="de 0 a 100">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nom" class="form-label">Creer une base donnee</label><span
-                                        class="text-danger">*</span>
-                                    <input type="number" class="form-control" id="basededonnees"
-                                        placeholder="de 0 a 100">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nom" class="form-label">Creer une interface dynamique</label><span
+                            <div class="col-sm-12 col-md-6 mb-3">
+                                <label for="nom" class="form-label">Preom</label><span class="text-danger">*</span>
+                                <input type="text" class="form-control" id="prenom" placeholder="prenom">
+                            </div>
+                        </div>
+                        <div class="row mx-0">
+                            <div class="col-sm-12 col-md-6 mb-3">
+                                <label for="nom" class="form-label">Niveau</label><span class="text-danger">*</span>
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                    id="niveau">
+                                    <option value="debutant">Debutant</option>
+                                    <option value="intermediaire">Intermediaire</option>
+                                    <option value="junior">Junior</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12 col-md-6 mb-3">
+                                <label for="formFileSm" class="form-label">Photo de profile</label>
+                                <input class="form-control form-control-sm" id="imgprofil" type="file"
+                                    accept=".jpg, .jpeg, .png .svg">
+                            </div>
+                        </div>
+                        <div class="row mx-0">
+                            <h3>Les competences</h3>
+                            <div class="col-sm-12 col-md-6 mb-3">
+                                <label for="nom" class="form-label">Maquetter une application</label><span
+                                    class="text-danger">*</span>
+                                <input type="number" class="form-control" id="maquetter" placeholder="de 0 a 100">
+                            </div>
+                            <div class="col-sm-12 col-md-6 mb-3">
+                                <label for="nom" class="form-label">Creer une base donnee</label><span
+                                    class="text-danger">*</span>
+                                <input type="number" class="form-control" id="basededonnees" placeholder="de 0 a 100">
+                            </div>
+                        </div>
+                        <div class="row mx-0">
+                            <div class="col-sm-12 col-md-6 mb-3">
+                                <l<label for="nom" class="form-label">Creer une interface dynamique</label><span
                                         class="text-danger">*</span>
                                     <input type="number" class="form-control" id="interfacedynamique"
                                         placeholder="de 0 a 100">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nom" class="form-label"> Développer la partie back-end </label><span
-                                        class="text-danger">*</span>
-                                    <input type="number" class="form-control" id="devbackend" placeholder="de 0 a 100">
-                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 mb-3">
+                                <label for="nom" class="form-label"> Développer la partie back-end </label><span
+                                    class="text-danger">*</span>
+                                <input type="number" class="form-control" id="devbackend" placeholder="de 0 a 100">
                             </div>
                         </div>
+                        <img src="" class="d-none" id="profile" alt="">
+                        <div class="mb-1">
+                            <label for="exampleFormControlTextarea1" class="form-label">Biographie</label><span
+                                class="text-danger">*</span>
+                            <textarea class="form-control" id="biographie" rows="3"></textarea>
+                            <p class="text-end my-2 me-3" id="paragraphe-limite-texte">
+                                contenu saisi: <span id="span-nombre-caracteres">0</span>/130
+                            </p>
+                            <p id="testResntant"></p>
+                        </div>
+
 
                         <div class="mb-3 text-center">
                             <button type="submit" class="btn btn-success" value="Ajouter"
@@ -143,7 +148,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-sm-12 col-md-3" id="divTableauApprenant">
+                <div class="col-sm-12 col-md-4" id="divTableauApprenant">
 
 
                 </div>
@@ -153,111 +158,109 @@
                 <button type="submit" class="btn btn-success " id="sauvegarder">SAUVEGARDER</button>
             </div>
         </div>
-
-        <!--<div layout:fragment="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                     
-                        <div class="card card-info">
-                            <div class="card-header bg-info">
-                                <h3 class="card-title">Formulaire de création d'un employé</h3>
-                            </div>
-                        
-                            <form>
-                                <div class="card-body">
-                                    <div class="form-group flex-grow-1">
-                                        <label >Matricule</label>
-                                        <input type="text" class="form-control"  placeholder="Matricule">
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="form-group flex-grow-1 mr-2">
-                                            <label >Nom</label>
-                                            <input type="text" class="form-control"  placeholder="Nom">
-                                        </div>
-                                        <div class="form-group flex-grow-1">
-                                            <label >Prénom</label>
-                                            <input type="text" class="form-control"  placeholder="Prénom">
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="form-group flex-grow-1 mr-2">
-                                            <label >Carte d'identité</label>
-                                            <input type="text" class="form-control"  placeholder="Carte d'identité">
-                                        </div>
-                                        <div class="form-group flex-grow-1">
-                                            <label >Date de naissance</label>
-                                            <input type="date" class="form-control"  placeholder="Date de naissance">
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="form-group flex-grow-1 mr-2">
-                                            <label >Lieu de naissance</label>
-                                            <input type="text" class="form-control"  placeholder="Lieu de naissance">
-                                        </div>
-                                        <div class="form-group flex-grow-1">
-                                            <label >Adressse</label>
-                                            <input type="text" class="form-control"  placeholder="Adressse">
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="form-group flex-grow-1 mr-2">
-                                            <label >Email</label>
-                                            <input type="email" class="form-control"  placeholder="Email">
-                                        </div>
-                                        <div class="form-group flex-grow-1">
-                                            <label >Téléphone</label>
-                                            <input type="text" class="form-control"  placeholder="Téléphone">
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="form-group flex-grow-1 mr-2">
-                                            <label>Genre</label>
-                                            <select class="form-control">
-                                                <option value="">-------------------</option>
-                                                <option value="H">Homme</option>
-                                                <option value="F">Femme</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group flex-grow-1">
-                                            <label>Stuation sociale</label>
-                                            <select class="form-control">
-                                                <option value="">-------------------</option>
-                                                <option value="M">Marié</option>
-                                                <option value="C">Célibataire</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="form-group flex-grow-1 mr-2">
-                                            <label>Fonction</label>
-                                            <select class="form-control">
-                                                <option value="">-------------------</option>
-                                                <option value="D">Directeur</option>
-                                                <option value="R">Responsable commerciale</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group flex-grow-1">
-                                            <label>Photo</label>
-                                            <input type="file" class="form-control"  placeholder="choisir une photo">
-                                        </div>
-                                    </div>
-                                </div>
-                                card-body -->
-        <div class="card-footer">
-            <button type="submit" class="btn btn-info">Enregistrer</button>
-            <button type="submit" class="btn btn-danger">Retourner à la liste</button>
-        </div>
-        </form>
-        </div>
-        <!-- /.card -->
-        </div>
-        </div>
-        </div>
-        </div>
         <div class="d-flex row mx-0" id="list_apprenant">
             <i class="bi bi-person-plus text-end me-3 mb-3 text-success btn" id="add_apprenant"></i>
         </div>
+
+
+        <section id="section_modification">
+            <div class="container">
+                <div class="modal fade" id="modal_modifierApprenant" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" id="form-apprenant">
+
+                                    <div class="row mx-0">
+                                        <div class="col-sm-12 col-md-6 mb-3">
+                                            <label for="nom" class="form-label">Nom</label><span
+                                                class="text-danger">*</span>
+                                            <input type="text" class="form-control" id="nom" placeholder="nom">
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 mb-3">
+                                            <label for="nom" class="form-label">Preom</label><span
+                                                class="text-danger">*</span>
+                                            <input type="text" class="form-control" id="prenom" placeholder="prenom">
+                                        </div>
+                                    </div>
+                                    <div class="row mx-0">
+                                        <div class="col-sm-12 col-md-6 mb-3">
+                                            <label for="nom" class="form-label">Niveau</label><span
+                                                class="text-danger">*</span>
+                                            <select class="form-select form-select-sm"
+                                                aria-label=".form-select-sm example" id="niveau">
+                                                <option value="debutant">Debutant</option>
+                                                <option value="intermediaire">Intermediaire</option>
+                                                <option value="junior">Junior</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 mb-3">
+                                            <label for="formFileSm" class="form-label">Photo de profile</label>
+                                            <input class="form-control form-control-sm" id="imgprofil" type="file"
+                                                accept=".jpg, .jpeg, .png .svg">
+                                        </div>
+                                    </div>
+                                    <div class="row mx-0">
+                                        <h3>Les competences</h3>
+                                        <div class="col-sm-12 col-md-6 mb-3">
+                                            <label for="nom" class="form-label">Maquetter une application</label><span
+                                                class="text-danger">*</span>
+                                            <input type="number" class="form-control" id="maquetter"
+                                                placeholder="de 0 a 100">
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 mb-3">
+                                            <label for="nom" class="form-label">Creer une base donnee</label><span
+                                                class="text-danger">*</span>
+                                            <input type="number" class="form-control" id="basededonnees"
+                                                placeholder="de 0 a 100">
+                                        </div>
+                                    </div>
+                                    <div class="row mx-0">
+                                        <div class="col-sm-12 col-md-6 mb-3">
+                                            <l<label for="nom" class="form-label">Creer une interface
+                                                dynamique</label><span class="text-danger">*</span>
+                                                <input type="number" class="form-control" id="interfacedynamique"
+                                                    placeholder="de 0 a 100">
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 mb-3">
+                                            <label for="nom" class="form-label"> Développer la partie back-end
+                                            </label><span class="text-danger">*</span>
+                                            <input type="number" class="form-control" id="devbackend"
+                                                placeholder="de 0 a 100">
+                                        </div>
+                                    </div>
+                                    <img src="" class="d-none" id="profile" alt="">
+                                    <div class="mb-1">
+                                        <label for="exampleFormControlTextarea1"
+                                            class="form-label">Biographie</label><span class="text-danger">*</span>
+                                        <textarea class="form-control" id="biographie" rows="3"></textarea>
+                                        <p class="text-end my-2 me-3" id="paragraphe-limite-texte">
+                                            contenu saisi: <span id="span-nombre-caracteres">0</span>/130
+                                        </p>
+                                        <p id="testResntant"></p>
+                                    </div>
+
+                                    <div class="mb-3 text-center">
+                                        <button type="submit" class="btn btn-success" value="Ajouter"
+                                            id="Enregistrer">AJOUTER</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <i class="bi bi-pen btn text-warning" id=""></i>
+                                <i class="bi bi-trash btn text-danger" id="btn_spprimer"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <script src="./dist/bundle.js"></script>

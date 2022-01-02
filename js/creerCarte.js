@@ -1,4 +1,4 @@
-import{list_apprenant,modalDetail,show_detail} from './scriptSupabase'
+import{list_apprenant,modalDetail,show_detail,supprimer_apprenat} from './scriptSupabase'
 //tableau pour stocke les apprent ajouter avant la sauvegarde
 export let apprenants=[]
 
@@ -17,6 +17,7 @@ const maquetter=document.querySelector("#maquetter")
 const basededonnees=document.querySelector("#basededonnees")
 const interfacedynamique=document.querySelector("#interfacedynamique")
 const devbackend=document.querySelector("#devbackend")
+const divContainerAdd=document.querySelector("#div-container")
 
 const modal_detailsApprenant=document.querySelector("#modal_detailsApprenant")
 
@@ -147,7 +148,7 @@ function func_btnSupprimer(btnSupprimer,idSpprimer,carteSupprimer){
 
 
 //fonction de creation d'une carte
-export function creerUNeCarte(apprenant,dnone,divContainer){
+export function creerUNeCarte(apprenant,dcol,btnnone,dnone,divContainer){
 
 
     const idButtonSupprimer = "btn_supprimer-" + apprenant.indicetab
@@ -161,11 +162,11 @@ export function creerUNeCarte(apprenant,dnone,divContainer){
 
 
     divContainer.insertAdjacentHTML("beforeend",`
-    <div class="col-sm-12 col-md-4 mb-2" id="${idDivSupp}">
+    <div class="col-sm-12 ${dcol} mb-2 shadow-lg p-3 bg-body rounded" id="${idDivSupp}">
         <div class="card text-center" >
             <div class="d-flex justify-content-end">
-                <i class="bi bi-pen btn text-warning" id="${idButtonModifier}"></i>
-                <i class="bi bi-x-lg btn text-danger"id="${idButtonSupprimer}"></i>
+                <i class="bi bi-pen btn text-warning ${btnnone}" id="${idButtonModifier}"></i>
+                <i class="bi bi-x-lg btn text-danger ${btnnone}"id="${idButtonSupprimer}"></i>
             </div>
             <img src="${apprenant.profile}" class="card-img mx-auto d-block img-fluid w-75" alt="...">
             <div class="card-body">
@@ -181,8 +182,16 @@ export function creerUNeCarte(apprenant,dnone,divContainer){
     const btnSupprimer=document.getElementById(idButtonSupprimer)
     const carteSupprimer=document.getElementById(idDivSupp)
     const btnDetail=document.getElementById(idDetail)
+
+    const btnSpprimer=document.getElementById("btn_spprimer")
+    const  btnModifierApp=document.getElementById("btn_modifierApp")
+
+
     btnDetail.setAttribute("data-bs-toggle","modal")
     btnDetail.setAttribute("data-bs-target","#modal_detailsApprenant")
+
+    btnModifierApp.setAttribute("data-bs-toggle","modal")
+    btnModifierApp.setAttribute("data-bs-target","#modal_modifierApprenant")
 
     btnDetail.addEventListener("click",(e)=>{
         sessionStorage.setItem("idApp",apprenant.id)
@@ -190,11 +199,29 @@ export function creerUNeCarte(apprenant,dnone,divContainer){
         show_detail(apprenant.id)
     })
     
+    btnSpprimer.addEventListener("click",(e)=>{
+        e.preventDefault()
+        supprimer_apprenat(sessionStorage.getItem("idApp"))
+    })
+
     func_btnModifier(btnModifier,idModifier)
 
     //suppresion de la carte apprenant de la liste
     func_btnSupprimer(btnSupprimer,idSpprimer,carteSupprimer)
     
+}
+
+const app={
+    indicetab:Date.now(),
+    nom:nom.value,
+    prenom:prenom.value,
+    biographie:biographie.value,
+    niveau:niveau.value,
+    profile:profile.src,
+    maquetter:parseInt(maquetter.value),
+    basedonnee:parseInt(basededonnees.value),
+    interfacedynamique:parseInt(interfacedynamique.value),
+    devbackend:parseInt(devbackend.value)
 }
 
 export function AjoutApprenant(){
@@ -213,22 +240,11 @@ export function AjoutApprenant(){
             }
             else if(btnAjouter.value=="Ajouter")
             {
-                const app={
-                    indicetab:Date.now(),
-                    nom:nom.value,
-                    prenom:prenom.value,
-                    biographie:biographie.value,
-                    niveau:niveau.value,
-                    profile:profile.src,
-                    maquetter:parseInt(maquetter.value),
-                    basedonnee:parseInt(basededonnees.value),
-                    interfacedynamique:parseInt(interfacedynamique.value),
-                    devbackend:parseInt(devbackend.value)
-                }
+               
                 apprenants.push(app),
                 divTableauApprenant.innerHTML="",
                 apprenants.forEach(apprenant=>{
-                    creerUNeCarte(apprenant,"d-none",divTableauApprenant)
+                    creerUNeCarte(apprenant,"col-md-12","d-block","d-none",divTableauApprenant)
                 }),
                 
                 alert(devbackend.value)
@@ -260,7 +276,7 @@ export function AjoutApprenant(){
                         btnAjouter.value="Ajouter"
                         btnAjouter.innerText="Ajouter"
                         apprenants.forEach(apprenant=>{
-                            creerUNeCarte(apprenant,"d-none",divTableauApprenant)
+                            creerUNeCarte(apprenant,"col-md-12","d-block","d-none",divTableauApprenant)
                         })
 
                     }
@@ -274,13 +290,13 @@ export function AjoutApprenant(){
 const divFormAjout=document.querySelector("#div_form_ajout")
 const addApprenant=document.querySelector("#add_apprenant")
 
-export function func_testKABA()
-{   alert("booo")
+export function func_displaydiv()
+{   //alert("booo")
     addApprenant.addEventListener("click",(e)=>{
         e.preventDefault()
         list_apprenant.setAttribute("class","d-none")
-        divFormAjout.setAttribute("class","d-block")
-        alert("boooo")
+        divContainerAdd.setAttribute("class","d-block")
+        //alert("boooo")
     })
 }
 /*sauvegarder.addEventListener("click",(e)=>{

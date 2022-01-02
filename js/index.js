@@ -1,4 +1,4 @@
-import {AjoutApprenant,variable,func_testKABA} from './creerCarte.js'
+import {AjoutApprenant,variable,func_displaydiv} from './creerCarte.js'
 import {func_sauvegarde,func_load_listeApprenants} from './scriptSupabase.js'
 
 
@@ -261,7 +261,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   event.preventDefault()
     //alert(variable)
     //alert(kaba)
-    func_testKABA()
+    func_displaydiv()
     func_load_listeApprenants()
 })
 
