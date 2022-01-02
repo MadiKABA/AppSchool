@@ -96,6 +96,6 @@ export function supprimer_apprenat(id) {
     },
     body: null
   })
-  window.location.href = "../"
+  window.location.href = "index.html"
 
 }
