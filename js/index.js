@@ -1,9 +1,28 @@
-import {AjoutApprenant } from './creerCarte.js'
-import {func_sauvegarde } from './scriptSupabase.js'
+import {AjoutApprenant,variable,func_testKABA} from './creerCarte.js'
+import {func_sauvegarde,func_load_listeApprenants} from './scriptSupabase.js'
+
 
 AjoutApprenant()
 func_sauvegarde()
 
+
+const divFormAjout=document.querySelector("#div_form_ajout")
+const addApprenant=document.querySelector("#add_apprenant")
+
+  /*  addApprenant.addEventListener("click",(e)=>{
+        e.preventDefault()
+        list_apprenant.setAttribute("class","d-none")
+        divFormAjout.setAttribute("class","d-block")
+        alert("boooo")
+    })*/
+
+
+//func_load_listeApprenants
+/*const sauvegarder=document.querySelector("#sauvegarder")
+sauvegarder.addEventListener("click",(e)=>{
+    e.preventDefault()
+    alert("bonj")
+})*/
 
 /*const formApprenant=document.querySelector("#form-apprenant");
 const nom=document.querySelector("#nom")
@@ -233,12 +252,17 @@ function func_btnSupprimer(btnSupprimer,idSpprimer,carteSupprimer){
     })
 }
 */
-/*window.addEventListener("DOMContentLoaded", (event) => {
-    apprenants.forEach(apprenant => {
+window.addEventListener("DOMContentLoaded", (event) => {
+    /*apprenants.forEach(apprenant => {
         creerUNeCarte(apprenant)
         
     });
-   
+   */
+  event.preventDefault()
+    //alert(variable)
+    //alert(kaba)
+    func_testKABA()
+    func_load_listeApprenants()
 })
 
-//console.log(apprenants)*/
+//console.log(apprenants)
