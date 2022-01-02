@@ -2,12 +2,15 @@ import {AjoutApprenant,variable,func_displaydiv} from './creerCarte.js'
 import {func_sauvegarde,func_load_listeApprenants} from './scriptSupabase.js'
 
 
-AjoutApprenant()
-func_sauvegarde()
+
 
 
 const divFormAjout=document.querySelector("#div_form_ajout")
 const addApprenant=document.querySelector("#add_apprenant")
+let sauvegarder=document.querySelector("#sauvegarder")
+AjoutApprenant()
+
+sauvegarder.addEventListener("click",func_sauvegarde)
 
   /*  addApprenant.addEventListener("click",(e)=>{
         e.preventDefault()
