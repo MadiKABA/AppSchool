@@ -211,19 +211,6 @@ export function creerUNeCarte(apprenant,dcol,btnnone,dnone,divContainer){
     
 }
 
-const app={
-    indicetab:Date.now(),
-    nom:nom.value,
-    prenom:prenom.value,
-    biographie:biographie.value,
-    niveau:niveau.value,
-    profile:profile.src,
-    maquetter:parseInt(maquetter.value),
-    basedonnee:parseInt(basededonnees.value),
-    interfacedynamique:parseInt(interfacedynamique.value),
-    devbackend:parseInt(devbackend.value)
-}
-
 export function AjoutApprenant(){
     formApprenant.addEventListener("submit", (e)=>{
         e.preventDefault()
@@ -240,7 +227,18 @@ export function AjoutApprenant(){
             }
             else if(btnAjouter.value=="Ajouter")
             {
-               
+                const app={
+                    indicetab:Date.now(),
+                    nom:nom.value,
+                    prenom:prenom.value,
+                    biographie:biographie.value,
+                    niveau:niveau.value,
+                    profile:profile.src,
+                    maquetter:parseInt(maquetter.value),
+                    basedonnee:parseInt(basededonnees.value),
+                    interfacedynamique:parseInt(interfacedynamique.value),
+                    devbackend:parseInt(devbackend.value)
+                }
                 apprenants.push(app),
                 divTableauApprenant.innerHTML="",
                 apprenants.forEach(apprenant=>{
