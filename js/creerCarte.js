@@ -172,7 +172,7 @@ export function creerUNeCarte(apprenant,dcol,btnnone,dnone,divContainer){
             <div class="card-body">
                 <h5 class="card-title">${apprenant.nom} ${apprenant.prenom}</h5>
                 <p class="card-text">${apprenant.niveau}</p>
-                <a href="#" id="${idDetail}" class="btn btn-primary ${dnone}">Details</a>
+                <a href="#" id="${idDetail}" class="btn text-center ${dnone}">Details</a>
             </div>
         </div>
     </div>`)
@@ -189,6 +189,8 @@ export function creerUNeCarte(apprenant,dcol,btnnone,dnone,divContainer){
 
     btnDetail.setAttribute("data-bs-toggle","modal")
     btnDetail.setAttribute("data-bs-target","#modal_detailsApprenant")
+    btnDetail.style.border="1px solid black"
+
 
     btnModifierApp.setAttribute("data-bs-toggle","modal")
     btnModifierApp.setAttribute("data-bs-target","#modal_modifierApprenant")

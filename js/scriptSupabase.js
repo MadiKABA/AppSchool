@@ -35,7 +35,7 @@ export function func_sauvegarde() {
     .then((response)=>response.json())
     .then((apprenant)=>{
       console.log(apprenant)
-      window.location.href="https://madikaba.github.io/appSchool/index.html"
+      window.location.href="index.html"
     })
     //alert("bien sauvegarder")
   
@@ -102,6 +102,6 @@ export function supprimer_apprenat(id) {
     },
     body: null
   })
-  window.location.href = "https://madikaba.github.io/appSchool/index.html"
+  window.location.href = "index.html"
 
 }
