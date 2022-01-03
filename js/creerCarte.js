@@ -17,7 +17,7 @@ const maquetter=document.querySelector("#maquetter")
 const basededonnees=document.querySelector("#basededonnees")
 const interfacedynamique=document.querySelector("#interfacedynamique")
 const devbackend=document.querySelector("#devbackend")
-export const divContainerAdd=document.querySelector("#div-container")
+const divContainerAdd=document.querySelector("#div-container")
 
 const modal_detailsApprenant=document.querySelector("#modal_detailsApprenant")
 
@@ -212,8 +212,7 @@ export function creerUNeCarte(apprenant,dcol,btnnone,dnone,divContainer){
 }
 
 export function AjoutApprenant(){
-    formApprenant.addEventListener("submit", (e)=>{
-        e.preventDefault()
+   
         
             if(nom.value.trim()==="")
             {
@@ -281,7 +280,7 @@ export function AjoutApprenant(){
                 })
               
             }
-    })
+   
    
 
 }

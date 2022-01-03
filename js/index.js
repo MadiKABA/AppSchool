@@ -1,4 +1,4 @@
-import {AjoutApprenant,variable,func_displaydiv,divContainerAdd} from './creerCarte.js'
+import {AjoutApprenant,variable,func_displaydiv} from './creerCarte.js'
 import {func_sauvegarde,func_load_listeApprenants,list_apprenant} from './scriptSupabase.js'
 
 
@@ -7,12 +7,18 @@ import {func_sauvegarde,func_load_listeApprenants,list_apprenant} from './script
 
 const divFormAjout=document.querySelector("#div_form_ajout")
 const addApprenant=document.querySelector("#add_apprenant")
-let sauvegarder=document.querySelector("#sauvegarder")
-AjoutApprenant()
+const sauvegarder=document.querySelector("#sauvegarder")
+const divContainerAdd=document.querySelector("#div-container")
+const formApprenant=document.querySelector("#form-apprenant");
+
+AjoutApprenant
 
 sauvegarder.addEventListener("click",(e)=>{
-    func_sauvegarde  
-    //list_apprenant.setAttribute("class","d-block")
+    e.preventDefault()
+    //alert("bonj")
+    func_sauvegarde()
+    list_apprenant.setAttribute("class","d-block")
+   // alert("soir")
     //divContainerAdd.setAttribute("class","d-none") 
 })
 
@@ -24,7 +30,11 @@ sauvegarder.addEventListener("click",(e)=>{
         alert("boooo")
     })*/
 
-
+    formApprenant.addEventListener("submit", (e)=>{
+        //alert("bonjour")
+        e.preventDefault()
+        AjoutApprenant()
+    })
 
 window.addEventListener("DOMContentLoaded", (event) => {
     /*apprenants.forEach(apprenant => {

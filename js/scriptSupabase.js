@@ -19,6 +19,7 @@ let pourcentageBackend = document.querySelector("#pourcentageBackend")
 
 
 export function func_sauvegarde() {
+
   console.log(apprenants)
   apprenants.forEach(apprenant => {
     //alert("bien sauvegarder")
@@ -31,7 +32,12 @@ export function func_sauvegarde() {
       },
       body: JSON.stringify(apprenant)
     })
-   // alert("bien sauvegarder")
+    .then((response)=>response.json())
+    .then((apprenant)=>{
+      console.log(apprenant)
+      window.location.href="https://madikaba.github.io/appSchool/index.html"
+    })
+    //alert("bien sauvegarder")
   
   })
   //alert("bien sauvegarder")
